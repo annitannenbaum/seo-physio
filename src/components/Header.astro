@@ -1,0 +1,30 @@
+---
+interface Props {
+    activePage: string;
+}
+---
+<nav class="seo-nav__container">
+    <div class="seo-nav__logo__container">
+        <img src="assets/logos/Seo_Logo.png" alt="seo physio logo">
+        <h1>SEO Physio</h1>
+    </div>
+</nav>
+<style lang="scss">
+    .seo-nav {
+        &__container {
+            box-shadow: 0px 5px 15px 15px rgba(0, 0, 0, 10%);
+            width: 100%;
+            padding: 0 50px;
+        }
+
+        &__logo__container {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+</style>

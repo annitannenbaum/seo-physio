@@ -1,0 +1,38 @@
+<footer class="seo-footer__container">
+    <div class="seo-footer__container--text">
+        <div class="seo-footer__links">
+            <a href="/impressum">Impressum</a>
+            <span class="seo-footer__links__divider"></span>
+            <a href="/kontakt">Kontakt</a>
+            <span class="seo-footer__links__divider"></span>
+            <a href="/kontakt">Anfahrt</a>
+        </div>
+        <div class="seo-footer__copyright">
+            &#169; 2024 SEO Physio
+        </div>
+    </div>
+</footer>
+<style lang="scss">
+    .seo-footer {
+        &__container {
+            box-shadow: 0px 5px 15px 15px rgba(0, 0, 0, 10%);
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        &__links {
+            &__divider {
+                border-right: 2px solid var(--primary-red);
+                margin: 0 10px;
+            }
+        }
+
+        &__copyright {
+            width: fit-content;
+            margin: 5px auto;
+            font-size: 14px;
+        }
+    }
+</style>

@@ -1,0 +1,68 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+import '@fontsource/sintony';
+import '@fontsource/staatliches';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header activePage='Index'></Header>
+		<slot />
+		<Footer></Footer>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--primary-red: #C92C4B;
+		--primary-dark: #211A1D;
+		--white-100: #FDFBF8;
+	}
+	html {
+		font-family: 'sintony', sans-serif;
+	}
+	body {
+		background-color: var(--white-100);
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'staatliches', system-ui;
+		font-weight: 400;
+		font-size: 32px;
+	}
+	a {
+		color: var(--primary-dark);
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>
