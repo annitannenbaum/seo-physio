@@ -1,0 +1,105 @@
+<div class="seo-section seo-section--black">
+    <div class="seo-section seo-section--red">
+        <div class="seo-section__content__container">
+            <div class="seo-section__picture__container">
+                <div class="seo-section__picture">
+                    <slot name="picture"></slot>
+                </div>
+            </div>
+            <div class="seo-section__content__text">
+                <div class="seo-section__title">
+                    <slot name="title"></slot>
+                    <slot name="icon"></slot>
+                </div>
+                <div class="seo-section__content">
+                    <slot name="content"></slot>
+                </div>
+            </div>
+        </div>
+        <div class="seo-section__footer">
+            <slot name="footer-content"></slot>
+        </div>
+    </div>
+</div>
+
+<style lang="scss">
+    .seo-section {
+
+        &--red {
+            background-color: var(--primary-red);
+            padding: 50px 50px;
+        }
+
+        &--black {
+            background-color: var(--primary-dark);
+            padding: 12px 0;
+            transform: skewY(-4deg);
+        }
+
+        &__content__container {
+            display: flex;
+            justify-content: space-around;
+            transform: skewY(4deg);
+            gap: 15%;
+        }
+
+        &__content__text {
+            width: 50%;
+        }
+
+        &__title, &__content {
+            color: var(--white-100);
+        }
+
+        &__picture__container {
+            position: relative;
+        }
+
+        &__picture {
+            position: absolute;
+            top: -13.5vh;
+        }
+
+        &__footer {
+            transform: skewY(4deg);
+            margin-top: 50px;
+        }
+    }
+
+    @media only screen and (max-device-width: 720px) {
+        .seo-section {
+            &__content__container {
+                gap: 0;
+            }
+
+            &__content__text {
+                width: 100%;
+            }
+
+            &__picture, &__footer {
+                display: none;
+            }
+        }
+    }
+
+    @media only screen and (max-device-width: 1200px) and (min-device-width: 721px) {
+        .seo-section {
+            justify-content: space-around;
+            align-items: center;
+
+            &__content__container {
+                gap: 5%;
+            }
+
+            &__content__text {
+                width: 60%;
+            }
+
+            &__picture {
+                position: relative;
+                top: 0;
+            }
+        }
+    }
+
+</style>

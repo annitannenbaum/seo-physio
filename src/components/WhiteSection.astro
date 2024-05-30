@@ -1,0 +1,49 @@
+<div class="seo-section seo-section--white">
+    <div class="seo-section__content__container">
+        <div class="seo-section__content">
+            <slot name="left"></slot>
+        </div>
+        <div class="seo-section__content">
+            <slot name="right"></slot>
+        </div>
+    </div>
+</div>
+<style lang="scss">
+    .seo-section {
+        &--white {
+            padding: 125px 50px;
+        }
+
+        &__content__container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__content {
+            width: 50%;
+        }
+    }
+
+    @media only screen and (max-device-width: 1200px) and (min-device-width: 721px) {
+        .seo-section {
+            &__content__container {
+                flex-direction: column;
+            }
+
+            &__content {
+                width: 100%;
+            }
+        }
+	}
+	@media only screen and (max-device-width: 720px) {
+        .seo-section {
+            &__content__container {
+                flex-direction: column;
+            }
+            
+            &__content {
+                width: 100%;
+            }
+        }
+	}
+</style>

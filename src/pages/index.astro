@@ -1,10 +1,44 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import RedSection from '../components/RedSection.astro';
+import DescriptionQuote from '../components/DescriptionQuote.astro'
+import Timeline from '../components/Timeline.astro';
+
+import { getEntry } from 'astro:content';
+import WhiteSection from '../components/WhiteSection.astro';
+
+const about = await getEntry('sections', 'aboutme');
+const intro = await getEntry('sections', 'introduction');
 ---
 
 <Layout title="SEO Private Physio & Sport">
 	<main>
+		<WhiteSection>
+			<DescriptionQuote slot="left">
+				<h1 class="seo-copy__padded-content--top" slot="title">{intro.data.title}</h1>
+				<img slot="icon" src="assets/icons/medal_red.svg"/>
+				<p class="seo-copy__padded-content--bottom" slot="content">{intro.data.text}</p>
+			</DescriptionQuote>
+		</WhiteSection>
+		<RedSection>
+			<img 
+				class="seo-picture seo-picture--left-skew" 
+				slot="picture" 
+				src="assets/erl_sa.jpg" />
+			<h1 slot="title">{about.data.title}</h1>
+			<p slot="content">{about.data.text}</p>
+			<div slot="footer-content">
+			</div>
+		</RedSection>
 	</main>
 </Layout>
 
-<style></style>
+<style lang="scss">
+	.seo-copy__padded-content {
+		&--bottom {
+			padding: 0 3rem 3rem;
+
+		}
+	}
+
+</style>

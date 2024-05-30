@@ -1,0 +1,108 @@
+<div>
+    <div class="seo-timeline__container">
+        <li>
+            <div>
+                <h6>2018 - 2022</h6>
+                <span>Hochschule Fresenius</span>
+                <span>B.Sc. Physiotherapie</span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <h6>2021 - 2023</h6>
+                <span>KINEMATIK Physio & Sport</span>
+                <span>Physiotherapeut</span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <h6>2021 - 2023</h6>
+                <span>Im Fokus! Physiotherapie</span>
+                <span>Physiotherapeut</span>
+            </div>
+        </li>
+        <li class="current">
+            <div>
+                <h6>2023 - heute</h6>
+                <span>SEO Private Physio & Sport</span>
+                <span>Geschäftsführer</span>
+            </div>
+        </li>
+    </div>
+
+</div>
+<style lang="scss">
+    	:root {
+		--primary-red: #C92C4B;
+		--primary-dark: #211A1D;
+		--white-100: #FDFBF8;
+	}
+    span {
+        display: block;
+        font-size: 14px;
+    }
+    div {
+        margin-top: 30px;
+    }
+    .seo-timeline__container {
+        position: relative;
+        overflow: hidden;
+        list-style-type: none;
+        padding-inline-start: 8px;
+    }
+
+    li {
+        position: relative;
+        float: left;
+        width: calc(100% / 4);
+        color: var(--white-100);
+    }
+
+    .current {
+        &:before {
+            height: 18px;
+            width: 18px;
+            border-radius: 18px;
+            border: 2px solid #FDFBF8;
+            background-color: transparent;
+        }
+    }
+
+    li:before {
+        display: block;
+        content: "";
+        background-color: #FDFBF8;
+        border: 2px solid #FDFBF8;
+        width: 15px;
+        height: 15px;
+        line-height: 15px;
+        border-radius: 15px;
+        margin-left: calc(15px * -0.5);
+        z-index: 1;
+    
+    .current ~ & {
+        background-color: var(--background-color);
+        color: var(--foreground-color);
+        border-color: var(--foreground-color);
+        }
+    }
+
+    li + li {
+        &:after{
+            content: "";
+            display: block;
+            width: 100%;
+            border-top: 2px dashed #FDFBF8;
+            height: 2px;
+            position: absolute;
+            left: -102%;
+            top: 0.5em;
+            z-index: 0;
+        }
+    }
+
+    .current ~ li:after {
+        background-color: #C92C4B;
+    }
+
+</style>

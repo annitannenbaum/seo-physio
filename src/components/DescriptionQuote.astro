@@ -1,0 +1,43 @@
+<div class="seo-description">
+    <div class="seo-description__upper-corner"></div>
+    <div class="seo-description__content">
+        <div class="seo-description__headline">
+            <slot name="title"></slot>
+            <slot name="icon"></slot>
+        </div>
+        <slot name="content"></slot>
+    </div>
+    <div class="seo-description__lower-corner"></div>
+</div>
+<style lang="scss">
+    .seo-description {
+        position: relative;
+
+        &__upper-corner {
+            border-right: 5px solid var(--primary-dark);
+            border-top: 5px solid var(--primary-dark);
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 65px;
+            height: 110px;
+        }
+
+        &__lower-corner {
+            border-left: 5px solid var(--primary-dark);
+            border-bottom: 5px solid var(--primary-dark);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 65px;
+            height: 110px;
+        }
+
+        &__headline {
+            display: flex;
+            align-items: center;
+            padding: 3rem 3rem 0;
+            gap: 5%;
+        }
+    }
+</style>
