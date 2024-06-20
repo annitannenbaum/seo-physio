@@ -17,14 +17,15 @@
         &__content__container {
             display: flex;
             justify-content: space-between;
+            gap: 5rem;
         }
 
         &__content {
-            width: 50%;
+            width: 45%;
         }
     }
 
-    @media only screen and (max-device-width: 1200px) and (min-device-width: 721px) {
+    @media (max-width: 1200px) and (min-width: 721px) {
         .seo-section {
             &__content__container {
                 flex-direction: column;
@@ -35,7 +36,7 @@
             }
         }
 	}
-	@media only screen and (max-device-width: 720px) {
+	@media (max-width: 720px) {
         .seo-section {
             &__content__container {
                 flex-direction: column;

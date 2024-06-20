@@ -1,0 +1,97 @@
+<div class="seo-call-to-action">
+        <picture>
+            <source type="image/webp" srcset="assets/images/seo-physio-title.webp">
+            <img src="assets/images/seo-physio-title.jpg"  alt="Junge Frau mit Langhantel auf der Schulter in schwarz-weiß">
+        </picture>
+        <div class="seo-call-to-action__background-overlay"></div>
+        <div class="seo-call-to-action__text">
+            <h1>
+                Verbessere deine Fitness und dein Wohlbefinden.
+            </h1>
+            <h1>
+                Starte noch heute mit professionellem Support!
+            </h1>
+            <a 
+                class="seo-call-to-action__button seo-button--primary"
+                href="https://app.cituro.com/booking/2130946" 
+                target="_blank" 
+                aria-label="Termin vereinbaren">
+                Termin vereinbaren
+            </a>
+        </div>
+</div>
+<style lang="scss">
+    .seo-call-to-action {
+        position: relative;
+        > picture, img {
+            width: 100%;
+            max-height: 75vh;
+            min-height: 300px;
+            clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+            display: block;
+        }
+    }
+    .seo-call-to-action__background-overlay {
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+        display: block;
+        z-index: 1000;
+        opacity: 40%;
+        background-color: var(--primary-dark);
+        position: absolute;
+        inset: 0;
+    }
+
+    .seo-call-to-action__text {
+        text-align: end;
+        position: absolute;
+        max-width: 80%;
+        top: 0;
+        right: 50px;
+        z-index: 1001;
+
+        > h1 {
+            color: var(--white-100);
+            font-size: 1.75rem;
+            z-index: 1001;
+            animation: textRevealRight 1s ease 0s 1 normal forwards;
+        }
+    }
+
+    .seo-call-to-action__button {
+        font-size: 1rem;
+        z-index: 1001;
+    }
+
+    @media (min-width: 520px) {
+        .seo-call-to-action__text {
+            > h1 {
+                font-size: 2.25rem;
+            }
+        }
+    }
+
+    @media (min-width: 700px) {
+        .seo-call-to-action__text {
+            > h1 {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .seo-call-to-action__text {
+            > h1 {
+                font-size: 4rem;
+            }
+        }
+    }
+
+    @media (min-width: 1500px) {
+        .seo-call-to-action__text {
+            > h1 {
+                font-size: 5rem;
+            }
+        }
+    }
+</style>

@@ -2,35 +2,55 @@
 import Layout from '../layouts/Layout.astro';
 import RedSection from '../components/RedSection.astro';
 import DescriptionQuote from '../components/DescriptionQuote.astro'
-import Timeline from '../components/Timeline.astro';
-
-import { getEntry } from 'astro:content';
+import CallToAction from '../components/CallToAction.astro';
 import WhiteSection from '../components/WhiteSection.astro';
+
+
+import { getEntry, getCollection } from 'astro:content';
+import AccordionCard from '../components/React/AccordionCard';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 
 const about = await getEntry('sections', 'aboutme');
 const intro = await getEntry('sections', 'introduction');
+const cards = await getCollection('cards');
 ---
 
 <Layout title="SEO Private Physio & Sport">
 	<main>
+		<CallToAction></CallToAction>
 		<WhiteSection>
 			<DescriptionQuote slot="left">
 				<h1 class="seo-copy__padded-content--top" slot="title">{intro.data.title}</h1>
-				<img slot="icon" src="assets/icons/medal_red.svg"/>
+				<img slot="icon" src="assets/icons/medal_red.svg" alt="Rote Medaille Icon"/>
 				<p class="seo-copy__padded-content--bottom" slot="content">{intro.data.text}</p>
 			</DescriptionQuote>
+			<div slot="right">
+				{ cards.map(card => (
+					<AccordionCard
+					client:idle
+					title={card.data.title}
+					text={card.data.text}
+					buttonText={card.data.buttonText}
+					href={card.data.href}
+					></AccordionCard>
+				))}
+			</div>
 		</WhiteSection>
 		<RedSection>
-			<img 
-				class="seo-picture seo-picture--left-skew" 
-				slot="picture" 
-				src="assets/erl_sa.jpg" />
+			<picture slot="picture">
+				<source type="image/webp" srcset="assets/images/erl_sa.webp">
+				<img 
+					src="assets/images/erl_sa.jpeg"
+					class="seo-picture seo-picture--left-skew"
+					alt="Portrait mir in meiner Praxis">
+			</picture>
 			<h1 slot="title">{about.data.title}</h1>
 			<p slot="content">{about.data.text}</p>
 			<div slot="footer-content">
 			</div>
 		</RedSection>
 		<WhiteSection></WhiteSection>
+		<WhatsAppButton></WhatsAppButton>
 	</main>
 </Layout>
 
@@ -38,7 +58,6 @@ const intro = await getEntry('sections', 'introduction');
 	.seo-copy__padded-content {
 		&--bottom {
 			padding: 0 3rem 3rem;
-
 		}
 	}
 

@@ -1,0 +1,64 @@
+.seo-card {
+    &--black {
+        position: relative;
+        background-color: var(--primary-dark);
+        padding-top: 12px;
+        margin-bottom: 3rem;
+        height: 7rem;
+
+        &--open {
+            height: fit-content;
+        }
+    }
+
+    &--red {
+        background-color: var(--primary-red);
+        padding: 36px;
+        width: 88%;
+        color: var(--white-100);
+    }
+
+    &__arrow {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        width: 60px;
+        height: 60px;
+        background-image: url('/assets/icons/arrow-down.svg');
+        cursor: pointer;
+
+        &--open {
+            transform: rotateX(180deg);
+            transition: all 0.5s ease-out;
+        }
+
+        &--closed {
+            transform: rotateX(0deg);
+            transition: all 0.5s ease-out;
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        > h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+    }
+
+    &__text {
+        margin-bottom: 2rem;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__button {
+        text-decoration: none;
+    }
+}

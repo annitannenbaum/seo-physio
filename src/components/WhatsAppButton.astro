@@ -1,0 +1,29 @@
+<a 
+    class="seo-whatsapp-button" 
+    aria-label="Kontaktiere mich direkt auf WhatsApp"
+    href=""
+    target="_blank">
+    <img src="assets/logos/whatsapp-logo.png" alt="WhatsApp Logo in weiß"/>
+</a>
+<style lang="scss">
+    .seo-whatsapp-button {
+        background-color: var(--primary-dark);
+        border-radius: 50%;
+        padding: 14px 14px 8px 14px;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        opacity: 50%;
+
+        > img {
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+        }
+
+        &:hover {
+            opacity: 100%;
+            transition: all 1s ease;
+        }
+    }
+</style>

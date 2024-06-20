@@ -53,16 +53,16 @@ const { title } = Astro.props;
 	}
 
 	h1 {
-		font-size: 32px;
+		font-size: 2.25rem;
 	}
 
 	h6 {
-		font-size: 16px;
+		font-size: 1rem;
 		margin: 0;
 	}
 	
 	.seo-copy, a, p, span {
-		font-size: 16px;
+		font-size: 1rem;
 		&--white {
 			color: var(--white-100);
 		}
@@ -83,8 +83,48 @@ const { title } = Astro.props;
 		}
 	}
 
-	@media only screen and (max-device-width: 1200px) and (min-device-width: 721px) {
+	.seo-button--primary {
+		background-color: var(--primary-red);
+		padding: 15px 25px;
+		color: var(--white-100);
+		outline: none;
+		border: none;
+		border-radius: 0;
+		cursor: pointer;
+		font-size: 0.875rem;
+		text-decoration: none;
 	}
-	@media only screen and (max-device-width: 720px) {
+
+	.seo-button--secondary {
+		background-color: transparent;
+		padding: 9px 22px;
+		color: var(--white-100);
+		outline: none;
+		border: 1px solid var(--white-100);
+		border-radius: 0;
+		cursor: pointer;
+		font-size: 0.875rem;
+		text-decoration: none;
+	}
+
+	.seo-whatsapp-button {
+
+	}
+
+	@media (max-width: 1200px) and (min-width: 721px) {
+	}
+	@media (max-width: 720px) {
+	}
+
+	@keyframes textRevealRight {
+		0% {
+			opacity: 0;
+			transform: translateX(250px);
+			}
+
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+			}
 	}
 </style>
