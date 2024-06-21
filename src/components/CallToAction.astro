@@ -1,7 +1,12 @@
 <div class="seo-call-to-action">
         <picture>
-            <source type="image/webp" srcset="assets/images/seo-physio-title.webp">
-            <img src="assets/images/seo-physio-title.jpg"  alt="Junge Frau mit Langhantel auf der Schulter in schwarz-weiß">
+            <source 
+                type="image/webp" 
+                srcset="assets/images/seo-physio-title.webp, assets/images/seo-physio-title-medium.webp, assets/images/seo-physio-title-small.webp">
+            <img 
+                srcset="assets/images/seo-physio-title.jpg, assets/images/seo-physio-title-medium.jpg, assets/images/seo-physio-title-small.jpg"
+                src="assets/images/seo-physio-title-medium.jpg"  
+                alt="Junge Frau mit Langhantel auf der Schulter in schwarz-weiß">
         </picture>
         <div class="seo-call-to-action__background-overlay"></div>
         <div class="seo-call-to-action__text">
@@ -25,7 +30,6 @@
         position: relative;
         > picture, img {
             width: 100%;
-            max-height: 75vh;
             min-height: 300px;
             clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
             display: block;

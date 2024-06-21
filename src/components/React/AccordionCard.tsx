@@ -16,7 +16,6 @@ const AccordionCard = ({ title, text, buttonText, href }: Props) => {
     }
 
     return (
-        <div className={`seo-card seo-card--black ${isVisible ? 'seo-card--black--open' : ''}`}>
             <div className="seo-card seo-card--red">
                 <div className="seo-card__title">
                     <h1>{ title }</h1>
@@ -46,8 +45,7 @@ const AccordionCard = ({ title, text, buttonText, href }: Props) => {
     
                     </div>
                 </div>)}
-            </div>
-        </div>)
+            </div>)
 }
 
 export default AccordionCard;

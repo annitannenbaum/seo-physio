@@ -88,39 +88,58 @@ const { title } = Astro.props;
 		}
 	}
 
-	.seo-button--primary {
-		background-color: var(--primary-red);
-		padding: 15px 25px;
-		color: var(--white-100);
-		outline: none;
-		border: none;
-		border-radius: 0;
-		cursor: pointer;
-		font-size: 0.875rem;
-		text-decoration: none;
-	}
+	.seo-button {
+	
+		&--primary {
+			background-color: var(--primary-red);
+			padding: 15px 25px;
+			color: var(--white-100);
+			outline: none;
+			border: none;
+			border-radius: 0;
+			cursor: pointer;
+			font-size: 0.875rem;
+			text-decoration: none;
 
-	.seo-button--secondary {
-		background-color: transparent;
-		padding: 9px 22px;
-		color: var(--white-100);
-		outline: none;
-		border: 1px solid var(--white-100);
-		border-radius: 0;
-		cursor: pointer;
-		font-size: 0.875rem;
-		text-decoration: none;
-	}
+			&:hover, &:focus {
+				outline: 1px solid var(--primary-red);
+				background-color: transparent;
+				transition: all 0.2s ease-in;
+			}
+		}
 
-	.seo-whatsapp-button {
+		&--secondary {
+			background-color: transparent;
+			padding: 9px 22px;
+			color: var(--white-100);
+			border: none;
+			outline: 1px solid var(--white-100);
+			border-radius: 0;
+			cursor: pointer;
+			font-size: 0.875rem;
+			text-decoration: none;
 
+			&:hover, &:focus {
+				outline: 1px solid var(--primary-dark);
+				transition: all 0.2s ease-in;
+				background-color: var(--primary-dark);
+				color: var(--white-100);
+			}
+		}
 	}
 
 	@media (max-width: 1200px) and (min-width: 721px) {
 	}
+
 	@media (max-width: 720px) {
-		h1, h2, h3, h4, h5, h6 {
+		h1 {
 			font-size: 2rem;
+		}
+	}
+
+	@media (max-width: 620px) {
+		h1 {
+			font-size: 1.5rem;
 		}
 	}
 

@@ -11,7 +11,7 @@
 <style lang="scss">
     .seo-section {
         &--white {
-            padding: 125px 50px;
+            padding: 75px 50px;
         }
 
         &__content__container {
@@ -25,28 +25,28 @@
         }
     }
 
-    @media (max-width: 1200px) and (min-width: 721px) {
+    @media (min-width: 1200px) {
         .seo-section {
-            &__content__container {
-                flex-direction: column;
-            }
-
-            &__content {
-                width: 100%;
+            &--white {
+                padding: 125px 50px;
             }
         }
 	}
-	@media (max-width: 720px) {
+    @media (max-width: 1024px) {
         .seo-section {
-            &--white {
-                padding: 50px 25px;
-            }
             &__content__container {
                 flex-direction: column;
             }
             
             &__content {
                 width: 100%;
+            }
+        }
+    }
+	@media (max-width: 720px) {
+        .seo-section {
+            &--white {
+                padding: 50px 25px;
             }
         }
 	}

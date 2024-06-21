@@ -38,9 +38,12 @@ const cards = await getCollection('cards');
 		</WhiteSection>
 		<RedSection>
 			<picture slot="picture">
-				<source type="image/webp" srcset="assets/images/erl_sa.webp">
+				<source 
+					type="image/webp" 
+					srcset="assets/images/erl_sa.webp">
 				<img 
 					src="assets/images/erl_sa.jpeg"
+					loading="lazy"
 					class="seo-picture seo-picture--left-skew"
 					alt="Portrait mir in meiner Praxis">
 			</picture>

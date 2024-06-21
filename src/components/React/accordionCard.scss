@@ -1,21 +1,10 @@
 .seo-card {
-    &--black {
-        position: relative;
-        background-color: var(--primary-dark);
-        padding-top: 12px;
-        margin-bottom: 3rem;
-        height: 7rem;
-
-        &--open {
-            height: fit-content;
-        }
-    }
-
     &--red {
         background-color: var(--primary-red);
         padding: 36px;
-        width: 88%;
         color: var(--white-100);
+        filter: drop-shadow(12px -12px 0px var(--primary-dark));
+        margin-bottom: 3rem;
     }
 
     &__arrow {
@@ -26,6 +15,8 @@
         height: 60px;
         background-image: url('/assets/icons/arrow-down.svg');
         cursor: pointer;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
 
         &--open {
             transform: rotateX(180deg);
@@ -66,7 +57,7 @@
 @media (max-width: 620px) {
     .seo-card {
         &--red {
-            padding: 28px;
+            padding: 24px;
         }
 
         &__title > h1 {
