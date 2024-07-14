@@ -22,6 +22,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
+	<script src="../scripts/intersectionObserver.js"></script>
 	<body>
 		<Header activePage='Index'></Header>
 		<slot />
@@ -45,6 +46,7 @@ const { title } = Astro.props;
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
+		overflow-x: hidden;
 	}
 
 	main {
@@ -80,11 +82,11 @@ const { title } = Astro.props;
 	.seo-picture {
 		max-width: 25vw;
 		&--left-skew {
-			clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+			clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
 		}
 
 		&--right-skew {
-			clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+			clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
 		}
 	}
 
@@ -128,6 +130,22 @@ const { title } = Astro.props;
 		}
 	}
 
+	.animated {
+		opacity: 0;
+	}
+
+	.fade-in-forward {
+		animation: fade-in-fwd 1.2s ease 0s 1 normal forwards;
+	}
+
+	.fade-in-left {
+		animation: fade-in-left 1.2s ease 0s 1 normal forwards;
+	}
+
+	.fade-in-right {
+		animation: fade-in-right 1.2s ease 0s 1 normal forwards;
+	}
+
 	@media (max-width: 1200px) and (min-width: 721px) {
 	}
 
@@ -143,15 +161,45 @@ const { title } = Astro.props;
 		}
 	}
 
-	@keyframes textRevealRight {
-		0% {
-			opacity: 0;
-			transform: translateX(250px);
-			}
-
-		100% {
-			opacity: 1;
-			transform: translateX(0);
-			}
+	@keyframes fade-in-fwd {
+	0% {
+		-webkit-transform: translateZ(-80px);
+				transform: translateZ(-80px);
+		opacity: 0;
 	}
+	100% {
+		-webkit-transform: translateZ(0);
+				transform: translateZ(0);
+		opacity: 1;
+	}
+	}
+
+
+@-webkit-keyframes fade-in-left {
+  0% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
 </style>

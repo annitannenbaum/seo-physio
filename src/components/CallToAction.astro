@@ -1,15 +1,11 @@
+---
+import { Image } from "astro:assets";
+import titleImage from '../../public/assets/images/seo-physio-title.jpg'
+---
 <div class="seo-call-to-action">
-        <picture>
-            <source 
-                type="image/webp" 
-                srcset="assets/images/seo-physio-title.webp, assets/images/seo-physio-title-medium.webp, assets/images/seo-physio-title-small.webp">
-            <img 
-                srcset="assets/images/seo-physio-title.jpg, assets/images/seo-physio-title-medium.jpg, assets/images/seo-physio-title-small.jpg"
-                src="assets/images/seo-physio-title-medium.jpg"  
-                alt="Junge Frau mit Langhantel auf der Schulter in schwarz-weiß">
-        </picture>
+        <Image src={titleImage} alt="Junge Frau mit Langhantel auf der Schulter in schwarz-weiß" class="seo-call-to-action__picture"></Image>
         <div class="seo-call-to-action__background-overlay"></div>
-        <div class="seo-call-to-action__text">
+        <div class="seo-call-to-action__text animated right">
             <h1>
                 Verbessere deine Fitness und dein Wohlbefinden.
             </h1>
@@ -28,12 +24,13 @@
 <style lang="scss">
     .seo-call-to-action {
         position: relative;
-        > picture, img {
-            width: 100%;
-            min-height: 300px;
-            clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
-            display: block;
-        }
+    }
+    .seo-call-to-action__picture {
+        width: 100%;
+        min-height: 300px;
+        max-height: 370px;
+        clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+        display: block;
     }
     .seo-call-to-action__background-overlay {
         width: 100%;
@@ -51,7 +48,7 @@
         position: absolute;
         max-width: 80%;
         top: 0;
-        right: 50px;
+        right: 25px;
         z-index: 1001;
 
         > h1 {
@@ -73,16 +70,25 @@
                 font-size: 2.25rem;
             }
         }
+
+        .seo-call-to-action__picture {
+            max-height: 400px;
+        }
     }
 
-    @media (min-width: 700px) {
+    @media (min-width: 720px) {
         .seo-call-to-action__text {
+            right: 50px;
             > h1 {
                 font-size: 3rem;
             }
         }
         .seo-call-to-action__button {
             font-size: 1rem;
+        }
+
+        .seo-call-to-action__picture {
+            max-height: 500px;
         }
     }
 
@@ -91,6 +97,20 @@
             > h1 {
                 font-size: 4rem;
             }
+        }
+
+        .seo-call-to-action__picture {
+            max-height: 600px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .seo-call-to-action__text {
+            right: 100px;
+        }
+
+        .seo-call-to-action__picture {
+            max-height: 760px;
         }
     }
 

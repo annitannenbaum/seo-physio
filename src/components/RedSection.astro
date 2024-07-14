@@ -1,12 +1,12 @@
 <div class="seo-section seo-section--black">
     <div class="seo-section seo-section--red">
         <div class="seo-section__content__container">
-            <div class="seo-section__picture__container">
+            <div class="seo-section__picture__container animated">
                 <div class="seo-section__picture">
                     <slot name="picture"></slot>
                 </div>
             </div>
-            <div class="seo-section__content__text">
+            <div class="seo-section__content__text animated left">
                 <div class="seo-section__title">
                     <slot name="title"></slot>
                     <slot name="icon"></slot>
@@ -40,11 +40,17 @@
             display: flex;
             justify-content: space-around;
             transform: skewY(4deg);
-            gap: 15%;
+            gap: 20%;
         }
 
         &__content__text {
             width: 50%;
+        }
+
+        &__title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         &__title, &__content {
@@ -102,6 +108,14 @@
             &__picture {
                 position: relative;
                 top: 0;
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .seo-section {
+            &--red {
+                padding: 50px 100px;
             }
         }
     }

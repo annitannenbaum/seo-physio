@@ -1,9 +1,9 @@
 .seo-card {
     &--red {
         background-color: var(--primary-red);
-        padding: 36px;
+        padding: 24px;
         color: var(--white-100);
-        filter: drop-shadow(12px -12px 0px var(--primary-dark));
+        filter: drop-shadow(8px -8px 0px var(--primary-dark));
         margin-bottom: 3rem;
     }
 
