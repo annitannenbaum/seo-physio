@@ -7,21 +7,20 @@
             <slot name="right"></slot>
         </div>
     </div>
+    <div class="animated">
+        <slot></slot>
+    </div>
 </div>
 <style lang="scss">
     .seo-section {
         &--white {
-            padding: 75px 50px;
+            padding: 80px 50px;
         }
 
         &__content__container {
             display: flex;
             justify-content: space-between;
             gap: 5rem;
-        }
-
-        &__content {
-            width: 45%;
         }
     }
 

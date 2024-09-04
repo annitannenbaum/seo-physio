@@ -1,12 +1,7 @@
----
-interface Props {
-    activePage: string;
-}
----
 <nav class="seo-nav__container">
     <div class="seo-nav__logo__container">
         <img src="assets/logos/Seo_Logo.png" alt="seo physio logo">
-        <h1>SEO Private Physiotherapie & Sport</h1>
+        <h1 class="seo-nav__title">SEO Private Physiotherapie & Sport</h1>
     </div>
 </nav>
 <style lang="scss">
@@ -16,6 +11,11 @@ interface Props {
             background-color: var(--white-100);
             padding: 0 50px;
             z-index: 1000;
+        }
+
+        &__title {
+            font-size: 3.25rem;
+            margin-top: revert;
         }
 
         &__logo__container {

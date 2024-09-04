@@ -1,4 +1,6 @@
 ---
-title: 'Was ich dir biete.'
-text: 'Some long introduction text with some more words and thoughts and cool stuff about physio and so on lorem ipsum schnipsum blubb blubb some placeholder text. The black fox jumped over the sphinx of quartz or whatever'
+title: 'Wir hören zu.'
+text: 'Zeitmangel, Kommunikationsprobleme und die daraus resultierende mangelnde Ganzheitlichkeit stellt aktuell ein wirklich großes Problem in unserem Gesundheitssystem dar. Daher machen Wir es besser und hören dir genau zu.
+
+Hinter jedem guten physiotherapeutischen Befund steckt immer jemand, der Dir zuhört. Der Patient verrät dir nämlich die Diagnose.'
 ---

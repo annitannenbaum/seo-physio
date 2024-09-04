@@ -1,68 +1,105 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import RedSection from '../components/RedSection.astro';
-import DescriptionQuote from '../components/DescriptionQuote.astro'
+import Image from '../components/Image.astro'
 import CallToAction from '../components/CallToAction.astro';
 import WhiteSection from '../components/WhiteSection.astro';
+import Carousel from '../components/React/Carousel';
 
 
-import { getEntry, getCollection } from 'astro:content';
-import AccordionCard from '../components/React/AccordionCard';
+import { getEntry } from 'astro:content';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 
-const about = await getEntry('sections', 'aboutme');
+const concept = await getEntry('sections', 'concept');
 const intro = await getEntry('sections', 'introduction');
-const cards = await getCollection('cards');
+const physio = await getEntry('sections', 'integrativephysio');
+const maitland = await getEntry('sections', 'maitland');
 ---
 
 <Layout title="SEO Private Physio & Sport">
 	<main>
 		<CallToAction></CallToAction>
 		<WhiteSection>
-			<DescriptionQuote slot="left">
-				<h1 class="seo-copy__padded-content--top" slot="title">{intro.data.title}</h1>
-				<img slot="icon" src="assets/icons/medal_red.svg" alt="Rote Medaille Icon"/>
-				<p class="seo-copy__padded-content--bottom" slot="content">{intro.data.text}</p>
-			</DescriptionQuote>
+			<Image slot="left" imageName="erl_sa" altText="Erl Sa" className="seo-section__image"></Image>
 			<div slot="right">
-				{ cards.map(card => (
-					<AccordionCard
-					client:idle
-					title={card.data.title}
-					text={card.data.text}
-					buttonText={card.data.buttonText}
-					href={card.data.href}
-					></AccordionCard>
-				))}
+				<h1 class="seo-copy__padded-content--top" slot="title">Wir <span class="seo-headline seo-headline--red seo-headline--inline">hören</span> zu.</h1>
+				<p class="seo-copy__padded-content--bottom" slot="content">{intro.data.text}</p>
+				<button class="seo-button--primary animated"><span>Erfahre hier mehr über uns</span></button>
 			</div>
 		</WhiteSection>
-		<RedSection>
-			<picture slot="picture">
-				<source 
-					type="image/webp" 
-					srcset="assets/images/erl_sa.webp">
-				<img 
-					src="assets/images/erl_sa.jpeg"
-					loading="lazy"
-					class="seo-picture seo-picture--left-skew"
-					alt="Portrait mir in meiner Praxis">
-			</picture>
-			<h1 slot="title">{about.data.title}</h1>
-			<img slot="icon" src="assets/icons/star.svg" alt="Sternchen Icon"/>
-			<p slot="content">{about.data.text}</p>
-			<div slot="footer-content">
+		<WhiteSection>
+			<div slot="left">
+				<h1 class="seo-copy__padded-content--top" slot="title"><span class="seo-headline seo-headline--red seo-headline--inline">Integrative</span> Physiotherapie.</h1>
+				<p class="seo-copy__padded-content--bottom" slot="content">{physio.data.text}</p>
+				<button class="seo-button--primary animated"><span>Buche jetzt einen Termin</span></button>
 			</div>
-		</RedSection>
-		<WhiteSection></WhiteSection>
+			<Image slot="right" imageName="concept" altText="Frau mit Langhantel von hinten" className="seo-section__image"></Image>
+		</WhiteSection>
+		<WhiteSection>
+			<Image slot="left" imageName="reha" altText="Nahaufnahme eines Knies bei einer Rehamaßnahme" className="seo-section__image"></Image>
+			<div slot="right">
+				<h1 class="seo-copy__padded-content--top" slot="title">Vertraue dem <span class="seo-headline seo-headline--red seo-headline--inline">Prozess</span>.</h1>
+				<p class="seo-copy__padded-content--bottom" slot="content">{concept.data.text}</p>
+			</div>
+		</WhiteSection>
+		<WhiteSection>
+			<div slot="left">
+				<h1 class="seo-copy__padded-content--top" slot="title">Das <span class="seo-headline seo-headline--red seo-headline--inline">Maitland</span>&reg; Konzept.</h1>
+				<p class="seo-copy__padded-content--bottom" slot="content">{maitland.data.text}</p>
+			</div>
+			<Image slot="right" imageName="mt" altText="Manuelle Therapie" className="seo-section__image"></Image>
+		</WhiteSection>
+		<WhiteSection>
+			<Image slot="left" imageName="erl_cv" altText="Porträt von Erl Sa" className="seo-section__image"></Image>
+			<div slot="right">
+				<h1 slot="title"><span class="seo-headline seo-headline--red seo-headline--inline">Erl</span> Sa.</h1>
+				<h3>Meine Qualifikationen:</h3>
+				<ul>
+					<li>Physiotherapeut</li>
+					<li>Physiotherapeut B.Sc.
+						<ul>
+							<li>Schwerpunkt Neurodynamik</li>
+						</ul>
+					</li>
+					<li>Manuelle Therapie nach Maitland, i.A.</li>
+					<li>Personal Trainer, B-Lizenz</li>
+					<li>CrossFit Trainer, CF-OL1</li>
+					<li>Instrumentengestützte Faszientherapie</li>
+				</ul>
+			</div>
+		</WhiteSection>
+		<WhiteSection>
+			<div slot="left">
+				<h1 slot="title"><span class="seo-headline seo-headline--red seo-headline--inline">Sanja</span> Schreiber.</h1>
+				<h3>Meine Qualifikationen:</h3>
+				<ul>
+					<li>Fitnesstrainer, B-Lizenz</li>
+					<li>Fitnesstrainer, A-Lizenz, i.A.
+						<ul>
+							<li>Fachtrainerin für rückenspezifisches Training</li>
+							<li>Fachtrainerin für rehabilitatives Training</li>
+							<li>Fachtrainerin für Cardio und Ausdauertraining</li>
+							<li>Ernährungsberatung für Sportler*innen</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<Image slot="right" imageName="mt" altText="Sanja Schreiber" className="seo-section__image"></Image>
+		</WhiteSection>
+		<WhiteSection>
+			<Carousel client:load></Carousel>
+		</WhiteSection>
 		<WhatsAppButton></WhatsAppButton>
 	</main>
 </Layout>
 
 <style lang="scss">
-	.seo-copy__padded-content {
-		&--bottom {
-			padding: 0 3rem 3rem;
-		}
+	.seo-section__image { width: 45vw; }
+
+	.seo-copy__padded-content--bottom { margin-bottom: 4rem; }
+
+	@media (max-width: 1024px) {
+		.seo-section__image { width: 90vw; }
+		.seo-copy__padded-content--bottom { margin-bottom: 2rem; }
 	}
 
 </style>

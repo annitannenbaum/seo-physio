@@ -1,24 +1,22 @@
 ---
-import { Image } from "astro:assets";
-import titleImage from '../../public/assets/images/seo-physio-title.jpg'
+import Image from "./Image.astro";
 ---
 <div class="seo-call-to-action">
-        <Image src={titleImage} alt="Junge Frau mit Langhantel auf der Schulter in schwarz-weiß" class="seo-call-to-action__picture"></Image>
-        <div class="seo-call-to-action__background-overlay"></div>
+        <Image 
+            className="seo-call-to-action__picture"
+            imageName="seo-physio-title"
+            width="100vw"
+            altText="Junge Frau mit Langhantel auf der Schulter in schwarz-weiß" class="seo-call-to-action__picture"></Image>
         <div class="seo-call-to-action__text animated right">
-            <h1>
-                Verbessere deine Fitness und dein Wohlbefinden.
-            </h1>
-            <h1>
-                Starte noch heute mit professionellem Support!
-            </h1>
-            <a 
-                class="seo-call-to-action__button seo-button--primary"
-                href="https://app.cituro.com/booking/2130946" 
-                target="_blank" 
-                aria-label="Termin vereinbaren">
-                Termin vereinbaren
-            </a>
+            <h2 class="top">
+                Geht nicht
+            </h2>
+            <h2 class="middle">
+                Gibt es nicht.
+            </h2>
+            <h2>
+                Wir machen den Unterschied.
+            </h2>
         </div>
 </div>
 <style lang="scss">
@@ -26,15 +24,13 @@ import titleImage from '../../public/assets/images/seo-physio-title.jpg'
         position: relative;
     }
     .seo-call-to-action__picture {
-        width: 100%;
+        width: 100vw;
         min-height: 300px;
         max-height: 370px;
-        clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
         display: block;
     }
     .seo-call-to-action__background-overlay {
         width: 100%;
-        clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
         display: block;
         z-index: 1000;
         opacity: 40%;
@@ -44,19 +40,22 @@ import titleImage from '../../public/assets/images/seo-physio-title.jpg'
     }
 
     .seo-call-to-action__text {
-        text-align: end;
         position: absolute;
         max-width: 80%;
-        top: 0;
-        right: 25px;
+        bottom: 25px;
+        left: 25px;
         z-index: 1001;
 
-        > h1 {
+        > h2 {
+            font-size: 2rem;
+            margin: 0;
             color: var(--white-100);
-            font-size: 1.75rem;
-            z-index: 1001;
             animation: textRevealRight 1s ease 0s 1 normal forwards;
         }
+
+        > .top { color: var(--primary-red); }
+
+        > .middle { color: var(--secondary-red); }
     }
 
     .seo-call-to-action__button {
@@ -65,60 +64,27 @@ import titleImage from '../../public/assets/images/seo-physio-title.jpg'
     }
 
     @media (min-width: 520px) {
-        .seo-call-to-action__text {
-            > h1 {
-                font-size: 2.25rem;
-            }
-        }
-
-        .seo-call-to-action__picture {
-            max-height: 400px;
-        }
+        .seo-call-to-action__text > h2 { font-size: 2.25rem; }
+        .seo-call-to-action__picture { max-height: 400px; }
     }
 
     @media (min-width: 720px) {
-        .seo-call-to-action__text {
-            right: 50px;
-            > h1 {
-                font-size: 3rem;
-            }
-        }
-        .seo-call-to-action__button {
-            font-size: 1rem;
-        }
-
-        .seo-call-to-action__picture {
-            max-height: 500px;
-        }
+        .seo-call-to-action__text > h2 { font-size: 3rem; }
+        .seo-call-to-action__picture { max-height: 500px; }
     }
 
     @media (min-width: 1024px) {
-        .seo-call-to-action__text {
-            > h1 {
-                font-size: 4rem;
-            }
-        }
-
-        .seo-call-to-action__picture {
-            max-height: 600px;
-        }
+        .seo-call-to-action__text > h2 { font-size: 4rem; }
+        .seo-call-to-action__picture { max-height: 600px; }
     }
 
     @media (min-width: 1200px) {
-        .seo-call-to-action__text {
-            right: 100px;
-        }
-
-        .seo-call-to-action__picture {
-            max-height: 760px;
-        }
+        .seo-call-to-action__text > h2 { font-size: 8rem; }
+        .seo-call-to-action__picture { max-height: 960px; }
     }
 
     @media (min-width: 1500px) {
-        .seo-call-to-action__text {
-            > h1 {
-                font-size: 5rem;
-            }
-        }
+        .seo-call-to-action__picture { max-height: 1200px; }
+        .seo-call-to-action__text > h2 { font-size: 10rem; }
     }
 </style>

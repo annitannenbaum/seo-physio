@@ -1,0 +1,68 @@
+.seo-review-card {
+    background-color: var(--primary-red);
+    padding: 24px;
+    color: var(--white-100);
+    width: 20rem;
+    height: 20rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 1rem;
+
+
+}
+
+.seo-headline-card {
+    width: 20rem;
+    height: 20rem;
+    padding: 0 24px;
+    margin: 1rem;
+
+    &__image {
+        width: 177px;
+        height: 110px;
+        margin-left: -32px;
+        margin-bottom: -32px;
+    }
+}
+
+.seo-review-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    &__container {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 20rem;
+        height: calc(20rem - 60px);
+    }
+}
+
+.seo-headline-card-rating-text {
+    > h3 { margin: 0; }
+
+    > span {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
+.seo-review-stars {
+    display: block;
+    margin: 0.25rem;
+}
+
+.seo-review-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@media(max-width: 400px) {
+    .seo-review-card, .seo-review-text__container {
+        width: 12.5rem;
+    }
+
+    .seo-headline-card {
+        height: 7.5rem;
+    }
+}
