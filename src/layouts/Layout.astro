@@ -23,6 +23,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<script src="../scripts/intersectionObserver.js"></script>
+	<script src="../scripts/scrollTo.js"></script>
 	<body>
 		<!-- <Header activePage='Index'></Header> -->
 		<slot />
@@ -38,6 +39,7 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: 'poppins', sans-serif;
+		overflow-x: hidden;
 	}
 	body {
 		background-color: var(--white-100);
@@ -67,6 +69,7 @@ const { title } = Astro.props;
 
 	h3 {
 		font-size: 3rem;
+		margin: 1rem 0;
 	}
 
 	h6 {
@@ -92,21 +95,20 @@ const { title } = Astro.props;
 	}
 
 	.seo-button {
-	
 		&--primary {
 			background-color: transparent;
 			padding: 15px 25px;
 			color: var(--primary-dark);
 			outline: none;
-			border: 1px solid var(--primary-dark);
+			border: 2px solid var(--primary-dark);
 			border-radius: 50px;
 			cursor: pointer;
 			font-size: 1.25rem;
 			text-decoration: none;
 			width: 100%;
 
-			&:hover, &:focus {
-				outline: 1px solid var(--primary-dark);
+			&:hover {
+				outline: 2px solid var(--primary-dark);
 				color: var(--white-100);
 				background-color: var(--primary-dark);
 				transition: all 0.2s ease-in;
@@ -118,7 +120,7 @@ const { title } = Astro.props;
 			padding: 9px 22px;
 			color: var(--white-100);
 			border: none;
-			outline: 1px solid var(--white-100);
+			outline: 2px solid var(--white-100);
 			border-radius: 0;
 			cursor: pointer;
 			font-size: 0.875rem;
@@ -150,7 +152,7 @@ const { title } = Astro.props;
 	}
 
 	@media (max-width: 1200px) {
-		h1, .seo-headline--red, .seo-headline--inline { font-size: 4rem; }
+		h1, h3, .seo-headline--red, .seo-headline--inline { font-size: 4rem; }
 		.seo-copy, a, p, span, ul, li { 
 			font-size: 1.5rem;
 			line-height: 2.25rem;
@@ -158,12 +160,12 @@ const { title } = Astro.props;
 	}
 
 	@media (max-width: 1024px) {
-		h1, .seo-headline--red, .seo-headline--inline { font-size: 2rem; }
+		h1, h3 .seo-headline--red, .seo-headline--inline { font-size: 3rem; }
 		.seo-copy, a, p, span, ul, li { font-size: 1.25rem; }
 	}
 
 	@media (max-width: 720px) {
-		h1, .seo-headline--red, .seo-headline--inline { font-size: 2.25rem; }
+		h1, h3, .seo-headline--red, .seo-headline--inline { font-size: 2.25rem; }
 		.seo-copy, a, p, span, ul, li { 
 			font-size: 1.25rem;
 			line-height: 1.875rem;

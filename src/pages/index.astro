@@ -4,6 +4,7 @@ import Image from '../components/Image.astro'
 import CallToAction from '../components/CallToAction.astro';
 import WhiteSection from '../components/WhiteSection.astro';
 import Carousel from '../components/React/Carousel';
+import PositionedHeadline from '../components/PositionedHeadline.astro';
 
 
 import { getEntry } from 'astro:content';
@@ -23,7 +24,7 @@ const maitland = await getEntry('sections', 'maitland');
 			<div slot="right">
 				<h1 class="seo-copy__padded-content--top" slot="title">Wir <span class="seo-headline seo-headline--red seo-headline--inline">hören</span> zu.</h1>
 				<p class="seo-copy__padded-content--bottom" slot="content">{intro.data.text}</p>
-				<button class="seo-button--primary animated"><span>Erfahre hier mehr über uns</span></button>
+				<button class="seo-button--primary animated" data-behavior="scroll" data-section="about"><span>Erfahre hier mehr über uns</span></button>
 			</div>
 		</WhiteSection>
 		<WhiteSection>
@@ -50,8 +51,8 @@ const maitland = await getEntry('sections', 'maitland');
 		</WhiteSection>
 		<WhiteSection>
 			<Image slot="left" imageName="erl_cv" altText="Porträt von Erl Sa" className="seo-section__image"></Image>
-			<div slot="right">
-				<h1 slot="title"><span class="seo-headline seo-headline--red seo-headline--inline">Erl</span> Sa.</h1>
+			<div slot="right" id="about">
+				<PositionedHeadline slot="title" first="Erl" last="Sa"></PositionedHeadline>
 				<h3>Meine Qualifikationen:</h3>
 				<ul>
 					<li>Physiotherapeut</li>
@@ -69,7 +70,7 @@ const maitland = await getEntry('sections', 'maitland');
 		</WhiteSection>
 		<WhiteSection>
 			<div slot="left">
-				<h1 slot="title"><span class="seo-headline seo-headline--red seo-headline--inline">Sanja</span> Schreiber.</h1>
+				<PositionedHeadline slot="title" first="Sanja" last="Schreiber"></PositionedHeadline>
 				<h3>Meine Qualifikationen:</h3>
 				<ul>
 					<li>Fitnesstrainer, B-Lizenz</li>
