@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+---
+<Layout title="SEO - Private Physiotherapie & Sport">
+    <Header></Header>
+    <main>
+        <div class="seo-physio__contact">
+            <h3>So findest du uns</h3>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1er0yTyz0kPPnHfFyMUAUPphOx_yOr-8&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+            <div class="seo-physio__contact__details">
+                <p>SEO - Private Physiotherapie & Sport</p>
+                <p>Mundsburger Damm 85</p>
+                <p>22085 Hamburg</p>
+            </div>
+        </div>
+    </main>
+</Layout>
+<style lang="scss">
+    .seo-physio__contact {
+        margin: 0 auto;
+
+        &__details {
+            margin-bottom: 0;
+        }
+    }
+    main {
+        position: relative;
+        height: 100%;
+    }
+</style>

@@ -1,7 +1,7 @@
 <nav class="seo-nav__container">
     <div class="seo-nav__logo__container">
         <img src="assets/logos/Seo_Logo.png" alt="seo physio logo">
-        <h1 class="seo-nav__title">SEO Private Physiotherapie & Sport</h1>
+        <a class="seo-nav__title" href="/">SEO Private Physiotherapie & Sport</a>
     </div>
 </nav>
 <style lang="scss">
@@ -11,11 +11,16 @@
             background-color: var(--white-100);
             padding: 0 50px;
             z-index: 1000;
+            height: 100px;
+            display: flex;
+            align-items: center;
         }
 
         &__title {
             font-size: 3.25rem;
-            margin-top: revert;
+            font-family: "Staatliches";
+            text-decoration: none;
+            color: var(--primary-dark);
         }
 
         &__logo__container {

@@ -2,13 +2,17 @@
     background-color: var(--primary-red);
     padding: 24px;
     color: var(--white-100);
-    width: 20rem;
-    height: 20rem;
+    width: 368px;
+    height: 368px;
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 1rem;
+    user-select: none;
+    flex: 0 0 368px;
 
-
+    &:nth-child(odd) {
+        background-color: var(--primary-dark);
+    }
 }
 
 .seo-headline-card {
@@ -60,6 +64,7 @@
 @media(max-width: 400px) {
     .seo-review-card, .seo-review-text__container {
         width: 12.5rem;
+        flex: 1 0 100%;
     }
 
     .seo-headline-card {
